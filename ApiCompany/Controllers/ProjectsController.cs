@@ -17,35 +17,35 @@ namespace ApiCompany.Controllers
 
     [Route("api/[controller]")]
     [ApiController]
-    public class UsersController : IGenericController<User>
+    public class ProjectsController : IGenericController<Project>
     {
-        private readonly IProcessable<User> _processable;
-        public UsersController(IProcessable<User> processable)   
+        private readonly IProcessable<Project> _processable;
+        public ProjectsController(IProcessable<Project> processable)
         {
             _processable = processable;
         }
-
-        public Task AddData(User t)
+        [HttpPost]
+        public Task AddData(Project t)
         {
             return _processable.AddData(t);
         }
-
-        public Task<User> DeleteData(int id)
+        [HttpPost]
+        public Task<Project> DeleteData(int id)
         {
             return _processable.DeleteData(id);
         }
         [HttpGet]
-        public IEnumerable<User> GetData()
+        public IEnumerable<Project> GetData()
         {
             return _processable.GetData();
         }
         [HttpGet("{id}")]
-        public Task<User> GetDataById(int id)
+        public Task<Project> GetDataById(int id)
         {
             return _processable.GetDataById(id);
         }
-
-        public Task UpdateData(int id, User t)
+        [HttpPut]
+        public Task UpdateData(int id, Project t)
         {
             return _processable.UpdateData(id, t);
         }
