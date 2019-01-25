@@ -29,7 +29,7 @@ namespace ApiCompany.Controllers
         {
             return _processable.AddData(t);
         }
-        [HttpPost]
+        [HttpDelete]
         public Task<Project> DeleteData(int id)
         {
             return _processable.DeleteData(id);

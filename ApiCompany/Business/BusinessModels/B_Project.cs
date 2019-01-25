@@ -17,8 +17,6 @@ namespace ApiCompany.Business.BusinessModels
 
     public class B_Project : Processable<Project, int>,IProcessable<Project>
     {
-        
-        private static DbContext _dbContext;
 
         public B_Project(ApiDbContext context) : base(context)
         {
